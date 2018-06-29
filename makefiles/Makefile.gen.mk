@@ -597,12 +597,12 @@ $(OBJ_DIR)/util/xml_helper.$O: \
 
 $(GEN_DIR)/ortools/util/optional_boolean.pb.cc: \
     $(SRC_DIR)/ortools/util/optional_boolean.proto | $(GEN_DIR)/ortools/util
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/util/optional_boolean.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/util/optional_boolean.proto
 
 $(GEN_DIR)/ortools/util/optional_boolean.pb.h: $(GEN_DIR)/ortools/util/optional_boolean.pb.cc \
 
 $(OBJ_DIR)/util/optional_boolean.pb.$O:	$(GEN_DIR)/ortools/util/optional_boolean.pb.cc | $(OBJ_DIR)/util
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/util/optional_boolean.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sutil$Soptional_boolean.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/util/optional_boolean.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sutil$Soptional_boolean.pb.$O
 
 DATA_DEPS = \
     $(SRC_DIR)/ortools/data/jobshop_scheduling_parser.h \
@@ -672,21 +672,21 @@ $(OBJ_DIR)/data/set_covering_parser.$O: \
 
 $(GEN_DIR)/ortools/data/jobshop_scheduling.pb.cc: \
     $(SRC_DIR)/ortools/data/jobshop_scheduling.proto | $(GEN_DIR)/ortools/data
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/data/jobshop_scheduling.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/data/jobshop_scheduling.proto
 
 $(GEN_DIR)/ortools/data/jobshop_scheduling.pb.h: $(GEN_DIR)/ortools/data/jobshop_scheduling.pb.cc \
 
 $(OBJ_DIR)/data/jobshop_scheduling.pb.$O:	$(GEN_DIR)/ortools/data/jobshop_scheduling.pb.cc | $(OBJ_DIR)/data
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/data/jobshop_scheduling.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sdata$Sjobshop_scheduling.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/data/jobshop_scheduling.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sdata$Sjobshop_scheduling.pb.$O
 
 $(GEN_DIR)/ortools/data/rcpsp.pb.cc: \
     $(SRC_DIR)/ortools/data/rcpsp.proto | $(GEN_DIR)/ortools/data
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/data/rcpsp.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/data/rcpsp.proto
 
 $(GEN_DIR)/ortools/data/rcpsp.pb.h: $(GEN_DIR)/ortools/data/rcpsp.pb.cc \
 
 $(OBJ_DIR)/data/rcpsp.pb.$O:	$(GEN_DIR)/ortools/data/rcpsp.pb.cc | $(OBJ_DIR)/data
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/data/rcpsp.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sdata$Srcpsp.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/data/rcpsp.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sdata$Srcpsp.pb.$O
 
 LP_DATA_DEPS = \
     $(SRC_DIR)/ortools/lp_data/lp_data.h \
@@ -1224,12 +1224,12 @@ $(OBJ_DIR)/glop/variable_values.$O: \
 
 $(GEN_DIR)/ortools/glop/parameters.pb.cc: \
     $(SRC_DIR)/ortools/glop/parameters.proto | $(GEN_DIR)/ortools/glop
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/glop/parameters.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/glop/parameters.proto
 
 $(GEN_DIR)/ortools/glop/parameters.pb.h: $(GEN_DIR)/ortools/glop/parameters.pb.cc \
 
 $(OBJ_DIR)/glop/parameters.pb.$O:	$(GEN_DIR)/ortools/glop/parameters.pb.cc | $(OBJ_DIR)/glop
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/glop/parameters.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sglop$Sparameters.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/glop/parameters.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sglop$Sparameters.pb.$O
 
 GRAPH_DEPS = \
     $(SRC_DIR)/ortools/graph/assignment.h \
@@ -1469,12 +1469,12 @@ $(OBJ_DIR)/graph/util.$O: \
 
 $(GEN_DIR)/ortools/graph/flow_problem.pb.cc: \
     $(SRC_DIR)/ortools/graph/flow_problem.proto | $(GEN_DIR)/ortools/graph
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/graph/flow_problem.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/graph/flow_problem.proto
 
 $(GEN_DIR)/ortools/graph/flow_problem.pb.h: $(GEN_DIR)/ortools/graph/flow_problem.pb.cc \
 
 $(OBJ_DIR)/graph/flow_problem.pb.$O:	$(GEN_DIR)/ortools/graph/flow_problem.pb.cc | $(OBJ_DIR)/graph
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/graph/flow_problem.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sgraph$Sflow_problem.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/graph/flow_problem.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sgraph$Sflow_problem.pb.$O
 
 ALGORITHMS_DEPS = \
     $(SRC_DIR)/ortools/algorithms/dense_doubly_linked_list.h \
@@ -2453,30 +2453,30 @@ $(OBJ_DIR)/sat/util.$O: \
 
 $(GEN_DIR)/ortools/sat/boolean_problem.pb.cc: \
     $(SRC_DIR)/ortools/sat/boolean_problem.proto | $(GEN_DIR)/ortools/sat
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/sat/boolean_problem.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/sat/boolean_problem.proto
 
 $(GEN_DIR)/ortools/sat/boolean_problem.pb.h: $(GEN_DIR)/ortools/sat/boolean_problem.pb.cc \
 
 $(OBJ_DIR)/sat/boolean_problem.pb.$O:	$(GEN_DIR)/ortools/sat/boolean_problem.pb.cc | $(OBJ_DIR)/sat
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/sat/boolean_problem.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Ssat$Sboolean_problem.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/sat/boolean_problem.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Ssat$Sboolean_problem.pb.$O
 
 $(GEN_DIR)/ortools/sat/cp_model.pb.cc: \
     $(SRC_DIR)/ortools/sat/cp_model.proto | $(GEN_DIR)/ortools/sat
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/sat/cp_model.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/sat/cp_model.proto
 
 $(GEN_DIR)/ortools/sat/cp_model.pb.h: $(GEN_DIR)/ortools/sat/cp_model.pb.cc \
 
 $(OBJ_DIR)/sat/cp_model.pb.$O:	$(GEN_DIR)/ortools/sat/cp_model.pb.cc | $(OBJ_DIR)/sat
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/sat/cp_model.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Ssat$Scp_model.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/sat/cp_model.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Ssat$Scp_model.pb.$O
 
 $(GEN_DIR)/ortools/sat/sat_parameters.pb.cc: \
     $(SRC_DIR)/ortools/sat/sat_parameters.proto | $(GEN_DIR)/ortools/sat
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/sat/sat_parameters.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/sat/sat_parameters.proto
 
 $(GEN_DIR)/ortools/sat/sat_parameters.pb.h: $(GEN_DIR)/ortools/sat/sat_parameters.pb.cc \
 
 $(OBJ_DIR)/sat/sat_parameters.pb.$O:	$(GEN_DIR)/ortools/sat/sat_parameters.pb.cc | $(OBJ_DIR)/sat
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/sat/sat_parameters.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Ssat$Ssat_parameters.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/sat/sat_parameters.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Ssat$Ssat_parameters.pb.$O
 
 BOP_DEPS = \
     $(SRC_DIR)/ortools/bop/bop_base.h \
@@ -2737,12 +2737,12 @@ $(OBJ_DIR)/bop/integral_solver.$O: \
 
 $(GEN_DIR)/ortools/bop/bop_parameters.pb.cc: \
     $(SRC_DIR)/ortools/bop/bop_parameters.proto | $(GEN_DIR)/ortools/bop
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/bop/bop_parameters.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/bop/bop_parameters.proto
 
 $(GEN_DIR)/ortools/bop/bop_parameters.pb.h: $(GEN_DIR)/ortools/bop/bop_parameters.pb.cc \
 
 $(OBJ_DIR)/bop/bop_parameters.pb.$O:	$(GEN_DIR)/ortools/bop/bop_parameters.pb.cc | $(OBJ_DIR)/bop
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/bop/bop_parameters.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sbop$Sbop_parameters.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/bop/bop_parameters.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sbop$Sbop_parameters.pb.$O
 
 LP_DEPS = \
     $(SRC_DIR)/ortools/linear_solver/glop_utils.h \
@@ -2948,12 +2948,12 @@ $(OBJ_DIR)/linear_solver/scip_interface.$O: \
 $(GEN_DIR)/ortools/linear_solver/linear_solver.pb.cc: \
     $(SRC_DIR)/ortools/linear_solver/linear_solver.proto \
     $(GEN_DIR)/ortools/util/optional_boolean.pb.cc | $(GEN_DIR)/ortools/linear_solver
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/linear_solver/linear_solver.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/linear_solver/linear_solver.proto
 
 $(GEN_DIR)/ortools/linear_solver/linear_solver.pb.h: $(GEN_DIR)/ortools/linear_solver/linear_solver.pb.cc \
 
 $(OBJ_DIR)/linear_solver/linear_solver.pb.$O:	$(GEN_DIR)/ortools/linear_solver/linear_solver.pb.cc | $(OBJ_DIR)/linear_solver
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/linear_solver/linear_solver.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Slinear_solver$Slinear_solver.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/linear_solver/linear_solver.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Slinear_solver$Slinear_solver.pb.$O
 
 CP_DEPS = \
     $(SRC_DIR)/ortools/constraint_solver/constraint_solver.h \
@@ -3636,67 +3636,67 @@ $(OBJ_DIR)/constraint_solver/visitor.$O: \
 
 $(GEN_DIR)/ortools/constraint_solver/assignment.pb.cc: \
     $(SRC_DIR)/ortools/constraint_solver/assignment.proto | $(GEN_DIR)/ortools/constraint_solver
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/constraint_solver/assignment.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/constraint_solver/assignment.proto
 
 $(GEN_DIR)/ortools/constraint_solver/assignment.pb.h: $(GEN_DIR)/ortools/constraint_solver/assignment.pb.cc \
 
 $(OBJ_DIR)/constraint_solver/assignment.pb.$O:	$(GEN_DIR)/ortools/constraint_solver/assignment.pb.cc | $(OBJ_DIR)/constraint_solver
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/constraint_solver/assignment.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Sassignment.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/constraint_solver/assignment.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Sassignment.pb.$O
 
 $(GEN_DIR)/ortools/constraint_solver/demon_profiler.pb.cc: \
     $(SRC_DIR)/ortools/constraint_solver/demon_profiler.proto | $(GEN_DIR)/ortools/constraint_solver
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/constraint_solver/demon_profiler.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/constraint_solver/demon_profiler.proto
 
 $(GEN_DIR)/ortools/constraint_solver/demon_profiler.pb.h: $(GEN_DIR)/ortools/constraint_solver/demon_profiler.pb.cc \
 
 $(OBJ_DIR)/constraint_solver/demon_profiler.pb.$O:	$(GEN_DIR)/ortools/constraint_solver/demon_profiler.pb.cc | $(OBJ_DIR)/constraint_solver
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/constraint_solver/demon_profiler.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Sdemon_profiler.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/constraint_solver/demon_profiler.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Sdemon_profiler.pb.$O
 
 $(GEN_DIR)/ortools/constraint_solver/model.pb.cc: \
     $(SRC_DIR)/ortools/constraint_solver/model.proto \
     $(GEN_DIR)/ortools/constraint_solver/search_limit.pb.cc | $(GEN_DIR)/ortools/constraint_solver
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/constraint_solver/model.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/constraint_solver/model.proto
 
 $(GEN_DIR)/ortools/constraint_solver/model.pb.h: $(GEN_DIR)/ortools/constraint_solver/model.pb.cc \
 
 $(OBJ_DIR)/constraint_solver/model.pb.$O:	$(GEN_DIR)/ortools/constraint_solver/model.pb.cc | $(OBJ_DIR)/constraint_solver
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/constraint_solver/model.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Smodel.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/constraint_solver/model.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Smodel.pb.$O
 
 $(GEN_DIR)/ortools/constraint_solver/routing_enums.pb.cc: \
     $(SRC_DIR)/ortools/constraint_solver/routing_enums.proto | $(GEN_DIR)/ortools/constraint_solver
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/constraint_solver/routing_enums.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/constraint_solver/routing_enums.proto
 
 $(GEN_DIR)/ortools/constraint_solver/routing_enums.pb.h: $(GEN_DIR)/ortools/constraint_solver/routing_enums.pb.cc \
 
 $(OBJ_DIR)/constraint_solver/routing_enums.pb.$O:	$(GEN_DIR)/ortools/constraint_solver/routing_enums.pb.cc | $(OBJ_DIR)/constraint_solver
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/constraint_solver/routing_enums.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Srouting_enums.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/constraint_solver/routing_enums.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Srouting_enums.pb.$O
 
 $(GEN_DIR)/ortools/constraint_solver/routing_parameters.pb.cc: \
     $(SRC_DIR)/ortools/constraint_solver/routing_parameters.proto \
     $(GEN_DIR)/ortools/constraint_solver/routing_enums.pb.cc \
     $(GEN_DIR)/ortools/constraint_solver/solver_parameters.pb.cc | $(GEN_DIR)/ortools/constraint_solver
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/constraint_solver/routing_parameters.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/constraint_solver/routing_parameters.proto
 
 $(GEN_DIR)/ortools/constraint_solver/routing_parameters.pb.h: $(GEN_DIR)/ortools/constraint_solver/routing_parameters.pb.cc \
 
 $(OBJ_DIR)/constraint_solver/routing_parameters.pb.$O:	$(GEN_DIR)/ortools/constraint_solver/routing_parameters.pb.cc | $(OBJ_DIR)/constraint_solver
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/constraint_solver/routing_parameters.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Srouting_parameters.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/constraint_solver/routing_parameters.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Srouting_parameters.pb.$O
 
 $(GEN_DIR)/ortools/constraint_solver/search_limit.pb.cc: \
     $(SRC_DIR)/ortools/constraint_solver/search_limit.proto | $(GEN_DIR)/ortools/constraint_solver
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/constraint_solver/search_limit.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/constraint_solver/search_limit.proto
 
 $(GEN_DIR)/ortools/constraint_solver/search_limit.pb.h: $(GEN_DIR)/ortools/constraint_solver/search_limit.pb.cc \
 
 $(OBJ_DIR)/constraint_solver/search_limit.pb.$O:	$(GEN_DIR)/ortools/constraint_solver/search_limit.pb.cc | $(OBJ_DIR)/constraint_solver
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/constraint_solver/search_limit.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Ssearch_limit.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/constraint_solver/search_limit.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Ssearch_limit.pb.$O
 
 $(GEN_DIR)/ortools/constraint_solver/solver_parameters.pb.cc: \
     $(SRC_DIR)/ortools/constraint_solver/solver_parameters.proto | $(GEN_DIR)/ortools/constraint_solver
-	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_DIR) $(SRC_DIR)/ortools/constraint_solver/solver_parameters.proto
+	$(PROTOC) --proto_path=$(INC_DIR) $(PROTOBUF_PROTOC_INC) --cpp_out=$(GEN_PATH) $(SRC_DIR)/ortools/constraint_solver/solver_parameters.proto
 
 $(GEN_DIR)/ortools/constraint_solver/solver_parameters.pb.h: $(GEN_DIR)/ortools/constraint_solver/solver_parameters.pb.cc \
 
 $(OBJ_DIR)/constraint_solver/solver_parameters.pb.$O:	$(GEN_DIR)/ortools/constraint_solver/solver_parameters.pb.cc | $(OBJ_DIR)/constraint_solver
-	$(CCC) $(CFLAGS) -c $(GEN_DIR)/ortools/constraint_solver/solver_parameters.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Ssolver_parameters.pb.$O
+	$(CCC) $(CFLAGS) -c $(GEN_PATH)/ortools/constraint_solver/solver_parameters.pb.cc $(OBJ_OUT)$(OBJ_DIR)$Sconstraint_solver$Ssolver_parameters.pb.$O
 

@@ -98,11 +98,11 @@ do
   else
 	  echo " | \$(GEN_DIR)/ortools/${main_dir}"
   fi
-  echo -e "\t\$(PROTOC) --proto_path=\$(INC_DIR) \$(PROTOBUF_PROTOC_INC) --cpp_out=\$(GEN_DIR) \$(SRC_DIR)/ortools/${main_dir}/${name}.proto"
+  echo -e "\t\$(PROTOC) --proto_path=\$(INC_DIR) \$(PROTOBUF_PROTOC_INC) --cpp_out=\$(GEN_PATH) \$(SRC_DIR)/ortools/${main_dir}/${name}.proto"
   echo
   echo "\$(GEN_DIR)/ortools/${main_dir}/${name}.pb.h: \$(GEN_DIR)/ortools/${main_dir}/${name}.pb.cc \\"
   echo
   echo "\$(OBJ_DIR)/${main_dir}/${name}.pb.\$O:	\$(GEN_DIR)/ortools/${main_dir}/${name}.pb.cc | \$(OBJ_DIR)/${main_dir}"
-  echo -e "\t\$(CCC) \$(CFLAGS) -c \$(GEN_DIR)/ortools/${main_dir}/${name}.pb.cc \$(OBJ_OUT)\$(OBJ_DIR)\$S${main_dir}\$S${name}.pb.\$O"
+  echo -e "\t\$(CCC) \$(CFLAGS) -c \$(GEN_PATH)/ortools/${main_dir}/${name}.pb.cc \$(OBJ_OUT)\$(OBJ_DIR)\$S${main_dir}\$S${name}.pb.\$O"
   echo
 done
