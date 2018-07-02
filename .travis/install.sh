@@ -67,7 +67,7 @@ if [ "${BUILDER}" == make ]; then
 			fi
 			if [ "${LANGUAGE}" == python ]; then
 				brew upgrade python;
-				python3.6 -m pip install -q virtualenv wheel six;
+				python3 -m pip install -q virtualenv wheel six;
 			elif [ "${LANGUAGE}" == java ]; then
 				brew cask install java;
 			elif [ "${LANGUAGE}" == dotnet ]; then
@@ -92,6 +92,8 @@ if [ "${BUILDER}" == cmake ]; then
 	if [ "${TRAVIS_OS_NAME}" == linux ]; then
 		if [ "${DISTRO}" == native ]; then
 			installswig
+			pyenv global system 3.6;
+			python3.6 -m pip install -q virtualenv wheel six;
 		else
 			# Linux Docker CMake build:
 			echo "NOT SUPPORTED"
