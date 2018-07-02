@@ -34,7 +34,6 @@ function print_paths {
     fi
     echo -n "    \$(${dir})/${dep}"
   done
-  echo ""
 }
 
 # Input: a list of file names (eg. "ortools/base/file.h").
@@ -48,11 +47,13 @@ function get_dependencies {
 # Generate XXX_DEPS macro
 echo "${libname}"_DEPS = \\
 print_paths ortools/"${main_dir}"/*.h
+echo ""
 echo
 
 # generate XXX_LIB_OBJS macro.
 echo "${1}_LIB_OBJS = \\"
 print_paths "${all_cc[@]//\.cc/\.\$O}" "${all_proto[@]//\.proto/.pb.\$O}"
+echo ""
 echo
 
 # Generate dependencies for .h files
@@ -65,6 +66,7 @@ for file in "${all_h[@]}"; do
   then
     echo "\$(SRC_DIR)/ortools/${main_dir}/${name}.h: \\"
     print_paths "${all_deps[@]}"
+    echo ""
     echo
   fi
 done
@@ -77,6 +79,7 @@ do
   echo "    \$(SRC_DIR)/ortools/${main_dir}/${name}.cc \\"
   all_deps=( $(get_dependencies "${file}") )
   print_paths "${all_deps[@]}"
+	echo " | \$(OBJ_DIR)/${main_dir}"
   echo -e "\t\$(CCC) \$(CFLAGS) -c \$(SRC_DIR)\$Sortools\$S${main_dir}\$S${name}.cc \$(OBJ_OUT)\$(OBJ_DIR)\$S${main_dir}\$S${name}.\$O"
   echo
 done
@@ -91,14 +94,15 @@ do
   if [[ "${#all_deps[@]}" != 0 ]]; then
     echo " \\"
     print_paths "${all_deps[@]//\.proto/.pb.cc}"
+	  echo " | \$(GEN_DIR)/ortools/${main_dir}"
   else
-    echo
+	  echo " | \$(GEN_DIR)/ortools/${main_dir}"
   fi
   echo -e "\t\$(PROTOC) --proto_path=\$(INC_DIR) \$(PROTOBUF_PROTOC_INC) --cpp_out=\$(GEN_DIR) \$(SRC_DIR)/ortools/${main_dir}/${name}.proto"
   echo
   echo "\$(GEN_DIR)/ortools/${main_dir}/${name}.pb.h: \$(GEN_DIR)/ortools/${main_dir}/${name}.pb.cc \\"
   echo
-  echo "\$(OBJ_DIR)/${main_dir}/${name}.pb.\$O: \$(GEN_DIR)/ortools/${main_dir}/${name}.pb.cc"
+  echo "\$(OBJ_DIR)/${main_dir}/${name}.pb.\$O:	\$(GEN_DIR)/ortools/${main_dir}/${name}.pb.cc | \$(OBJ_DIR)/${main_dir}"
   echo -e "\t\$(CCC) \$(CFLAGS) -c \$(GEN_DIR)/ortools/${main_dir}/${name}.pb.cc \$(OBJ_OUT)\$(OBJ_DIR)\$S${main_dir}\$S${name}.pb.\$O"
   echo
 done
